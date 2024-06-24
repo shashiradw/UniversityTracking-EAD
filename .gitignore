@@ -1,0 +1,12 @@
+# Visual Studio 2022 specific files
+.vs/
+
+# .NET build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.sln.docstates
+*.userprefs
