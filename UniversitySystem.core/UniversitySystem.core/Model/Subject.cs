@@ -10,23 +10,21 @@ namespace UniversitySystem.core.Model
     {
         public int id {  get; set; }
         public string name { get; set; }
-
-        public List<Session> sessions { get; set; }
-
+        public List<StudySession> sessions { get; set; }
         public List<KnowledgeAssessment> assessment { get; set; }
-
-        public Student student { get; set; }
-
-
-
         public Subject() { }
 
-        public Subject(string name, List<Session> sessions, List<KnowledgeAssessment> assessment, Student student)
+        public Subject(int Id, string Name) 
         {
-            name = name;
-            sessions = sessions;
-            assessment = assessment;
-            student = student;
+            id = Id;
+            name = Name;
+        }
+
+        public Subject(string Name, List<StudySession> Sessions, List<KnowledgeAssessment> Assessment)
+        {
+            name = Name;
+            sessions = Sessions;
+            assessment = Assessment;
         }
 
 

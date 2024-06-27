@@ -41,20 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Model\BaseActivity.cs" />
-    <Compile Include="Model\Break.cs" />
+    <Compile Include="DataManagerDB.cs" />
+    <Compile Include="Model\BaseSession.cs" />
+    <Compile Include="Model\BreakSession.cs" />
+    <Compile Include="Model\Knowledge.cs" />
     <Compile Include="Model\KnowledgeAssessment.cs" />
-    <Compile Include="Model\Session.cs" />
+    <Compile Include="Model\Recurring.cs" />
+    <Compile Include="Model\StudySession.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\DayView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IStudentService.cs" />
-    <Compile Include="Services\ISubjectService.cs" />
-    <Compile Include="Services\LogInHelper.cs" />
-    <Compile Include="Services\StudentService.cs" />
-    <Compile Include="Services\SubjectService.cs" />
+    <Compile Include="Controller\LogInHelper.cs" />
+    <Compile Include="Controller\SessionController.cs" />
+    <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\SubjectController.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
