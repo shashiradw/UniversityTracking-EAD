@@ -31,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\UniversityTracking-EAD1\UniversitySystemWFP\packages\MathNet.Numerics.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\UniversityTracking-EAD1\UniversitySystemWFP\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,8 +51,7 @@
     <Compile Include="Model\BaseSession.cs" />
     <Compile Include="Model\BreakSession.cs" />
     <Compile Include="Model\Knowledge.cs" />
-    <Compile Include="Model\KnowledgeAssessment.cs" />
-    <Compile Include="Model\Recurring.cs" />
+    <Compile Include="Model\PredictModel.cs" />
     <Compile Include="Model\StudySession.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
@@ -58,6 +63,8 @@
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

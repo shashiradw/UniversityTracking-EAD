@@ -18,19 +18,5 @@ namespace UniversitySystem.core.Model
             name = string.Empty;
             subjects = new List<Subject>();
         }
-
-        public Student(string name)
-        {
-            this.stu_id = 1;
-            this.name = name;
-            this.subjects = new List<Subject>();
-        }
-
-        public Student(int stu_id, string name, List<Subject> subjects)
-        {
-            this.stu_id = stu_id;
-            this.name = name;
-            this.subjects = subjects;
-        }
     }
 }

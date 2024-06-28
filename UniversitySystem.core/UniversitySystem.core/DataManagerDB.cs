@@ -10,6 +10,7 @@ namespace UniversitySystem.core
     public class DataManagerDB
     {
         private static DataManagerDB _instance;
+
         private static readonly object _lock = new object();
         public Student student { get; set; }
         public List<Subject> subjects { get; set; }
@@ -22,8 +23,6 @@ namespace UniversitySystem.core
             studySessions = new List<StudySession>();
             subjects = new List<Subject>();
             breakSessions = new List<BreakSession>();
-
-            AddDummyData();
         }
 
         public static DataManagerDB Instance
@@ -66,7 +65,20 @@ namespace UniversitySystem.core
             return breakSessions;
         }
 
-        public void AddDummyData()
+        public List<Subject> AddSubjects()
+        {
+            Subject sub1= new Subject(1, "EAD");
+            Subject sub2 = new Subject(2, "UI/UX");
+            Subject sub3 = new Subject(3, "Maths");
+
+            subjects.Add(sub1);
+            subjects.Add(sub2);
+            subjects.Add(sub3);
+
+            return subjects;
+        }
+
+        /*public void AddDummyData()
         {
             // 1
             BreakSession b1 = new BreakSession
@@ -130,7 +142,7 @@ namespace UniversitySystem.core
             {
                 id = 1,
                 name = "Maths",
-                sessions = new List<StudySession>
+                studySessions = new List<StudySession>
                 {
                     s1,
                     s2
@@ -164,7 +176,7 @@ namespace UniversitySystem.core
                 id = 3,
                 date = DateTime.Today.AddDays(1).AddDays(1),
                 start_time = DateTime.Today.AddDays(1).AddHours(18).TimeOfDay,
-                end_time = DateTime.Today.AddDays(1).AddHours(25).TimeOfDay,
+                end_time = DateTime.Today.AddDays(1).AddHours(23).TimeOfDay,
                 isRecurring = false,
                 breaks = new List<BreakSession>
                     {
@@ -202,7 +214,7 @@ namespace UniversitySystem.core
             {
                 id = 2,
                 name = "Science",
-                sessions = new List<StudySession>
+                studySessions = new List<StudySession>
                 {
                     s3,
                     s4
@@ -212,7 +224,7 @@ namespace UniversitySystem.core
 
             student.subjects.Add(sub1);
             student.subjects.Add(sub2);
-        }
+        }*/
 
 
     }

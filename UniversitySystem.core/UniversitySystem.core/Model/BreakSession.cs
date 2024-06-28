@@ -8,13 +8,9 @@ namespace UniversitySystem.core.Model
 {
     public class BreakSession : BaseSession
     {
-        private StudySession studySession;
-        private List<BreakSession> recurringSessions;
-
         public BreakSession()
         {
             isBreak = true;
-            recurringSessions= new List<BreakSession>();
         }
 
         public BreakSession(int Id)
@@ -24,7 +20,7 @@ namespace UniversitySystem.core.Model
             start_time = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, 0);
             end_time = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, 0);
             isBreak = true;
-            recurringSessions = new List<BreakSession>();
         }
+
     }
 }

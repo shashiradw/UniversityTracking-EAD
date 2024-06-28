@@ -30,5 +30,6 @@ namespace UniversitySystem.core.Services
             string hashedInput = HashPassword(user.Password);
             return string.Equals(hashedInput, hashedpw, StringComparison.OrdinalIgnoreCase);
         }
+
     }
 }

@@ -52,12 +52,11 @@ namespace UniversitySystem.core.Model
                 end_time = this.end_time,
                 isRecurring = this.isRecurring,
                 isBreak = false,
-                breaks = this.breaks,
+                breaks = new List<BreakSession>(),
                 recurringSessions = new List<StudySession>(),
                 currentKnowledge= this.currentKnowledge
             };
         }
-
 
         public override string ToString()
         {

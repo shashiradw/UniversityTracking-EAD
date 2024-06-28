@@ -28,9 +28,9 @@ namespace UniversitySystem.core.Services
             List<StudySession> sortedStudySessions = _dataManager.studySessions.OrderBy(s => s.id).ToList();
 
             if (sortedStudySessions.Count > 0)
-                lastId = sortedStudySessions.Last().id;
+                lastId = sortedStudySessions.Last().id + 1;
 
-            return lastId + 1;
+            return lastId;
         }
 
         public int generateBreakSessionID()
@@ -38,9 +38,9 @@ namespace UniversitySystem.core.Services
             int lastId = 1;
             List<BreakSession> sortedBreakSessions = _dataManager.breakSessions.OrderBy(s => s.id).ToList();
             if (sortedBreakSessions.Count > 0)
-                lastId = sortedBreakSessions.Last().id;
+                lastId = sortedBreakSessions.Last().id + 1;
 
-            return lastId + 1;
+            return lastId;
         }
 
         public BreakSession createBreakSession()
@@ -76,7 +76,7 @@ namespace UniversitySystem.core.Services
             else
             {
                 // Handle new session
-                subject.sessions.Add(studySession);
+                subject.studySessions.Add(studySession);
                 _dataManager.studySessions.Add(studySession);
             }
 
@@ -89,7 +89,7 @@ namespace UniversitySystem.core.Services
                     StudySession es = _dataManager.studySessions.FirstOrDefault(s => s.id == rs.id);
                     if (es == null)
                     {
-                        subject.sessions.Add(rs);
+                        subject.studySessions.Add(rs);
                         _dataManager.studySessions.Add(rs);
                     }
                 }
@@ -144,7 +144,7 @@ namespace UniversitySystem.core.Services
         public List<StudySession> getStudySessionsBySubject(Subject subject)
         {
             //<StudySession> filteredSessions = _dataManager.studySessions.Where(s => s.id == subject.id).ToList();
-            return subject.sessions;
+            return subject.studySessions;
         }
 
         public bool checkConflictBreakSession(StudySession studySession, TimeSpan start_time, TimeSpan end_time)
@@ -156,7 +156,7 @@ namespace UniversitySystem.core.Services
 
             foreach (BreakSession existingSession in studySession.breaks)
             {
-                if (start_time < existingSession.end_time && end_time > existingSession.start_time)
+                if (studySession.id != existingSession.id && start_time < existingSession.end_time && end_time > existingSession.start_time)
                 {
                     return true;
                 }

@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace UniversitySystem.core.Model
 {
-
-    public class Knowledge
+    public class PredictModel
     {
         public string subject { get; set; }
-        public double study_hours { get; set; }
         public double c_knowledge_level { get; set; }
-        public string grade {  get; set; }  
+        public string grade {  get; set; }
 
-        public Knowledge(string subject, double study_hours, double c_knowledge_level, string grade)
+        public PredictModel() { }
+        public PredictModel(string subject, double c_knowledge_level, string grade)
         {
             this.subject = subject;
-            this.study_hours = study_hours;
             this.c_knowledge_level = c_knowledge_level;
             this.grade = grade;
         }
