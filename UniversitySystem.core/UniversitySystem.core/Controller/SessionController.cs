@@ -9,11 +9,11 @@ namespace UniversitySystem.core.Services
 {
     public class SessionController
     {
-        private DataManagerDB _dataManager;
+        private DataStore _dataManager;
 
         public SessionController()
         {
-            _dataManager = DataManagerDB.Instance;
+            _dataManager = DataStore.Instance;
         }
 
         public StudySession createStudySession()

@@ -10,12 +10,12 @@ namespace UniversitySystem.core.Services
     public class StudentController 
     {
         private LogInHelper logInHelper;
-        private DataManagerDB _dataManager;
+        private DataStore _dataManager;
 
         public StudentController() 
         { 
             logInHelper = new LogInHelper();
-            _dataManager = DataManagerDB.Instance;
+            _dataManager = DataStore.Instance;
         }
 
         public bool LogIn(string username, string password)

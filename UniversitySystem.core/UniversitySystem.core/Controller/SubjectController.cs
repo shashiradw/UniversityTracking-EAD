@@ -14,10 +14,10 @@ namespace UniversitySystem.core.Services
 {
     public class SubjectController
     {
-        private DataManagerDB _dataManager;
+        private DataStore _dataManager;
 
         public SubjectController() {
-            _dataManager = DataManagerDB.Instance;
+            _dataManager = DataStore.Instance;
         }
 
         public Subject createSubject(int Id, string Name)
