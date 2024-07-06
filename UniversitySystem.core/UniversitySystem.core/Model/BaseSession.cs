@@ -32,20 +32,5 @@ namespace UniversitySystem.core.Model
             this.isBreak = isBreak;
         }
 
-        /*public BaseSession Clone()
-        {
-            return new BaseSession
-            {
-                id = this.id,
-                date = this.date,
-                start_time = this.start_time,
-                end_time = this.end_time,
-                isRecurring = this.isRecurring,
-                student = this.student,
-                subject = this.subject,
-                isBreak = this.isBreak
-            };
-        }*/
-
     }
 }

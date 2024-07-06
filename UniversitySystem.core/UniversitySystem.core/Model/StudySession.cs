@@ -31,7 +31,7 @@ namespace UniversitySystem.core.Model
             recurringSessions = new List<StudySession>();
         }
 
-        public StudySession(int Id, DateTime Date, TimeSpan Start_time, TimeSpan End_time, bool IsRecurring, List<BreakSession> Breaks)
+        public StudySession(int Id, DateTime Date, TimeSpan Start_time, TimeSpan End_time, bool IsRecurring, List<BreakSession> Breaks, double currentKnowledge)
         {
             this.breaks = Breaks;
             this.id = Id;
@@ -40,6 +40,7 @@ namespace UniversitySystem.core.Model
             this.end_time = End_time;
             this.isRecurring = IsRecurring;
             recurringSessions = new List<StudySession>();
+            this.currentKnowledge = currentKnowledge;
         }
 
         public StudySession Clone()
